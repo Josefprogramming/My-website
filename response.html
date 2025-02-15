@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Response</title>
+    <title>Interactive Message</title>
     <style>
         body {
-            background: linear-gradient(to right, red, orange, yellow);
-            color: white;
-            font-size: 40px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, red, orange, yellow);
             font-family: Arial, sans-serif;
-            margin-top: 20%;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        input, button {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
         }
     </style>
 </head>
