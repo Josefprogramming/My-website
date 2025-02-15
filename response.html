@@ -17,7 +17,21 @@
 </head>
 <body>
     <p><strong>JOSEF DOESN'T SEE RESPONSE, PLEASE SEND HIM MESSAGE</strong></p>
-<p><strong>GO TO MESSENGER!</strong></p>
-     <a href="https://m.me/USERNAME" target="_blank">Send via Messenger</a>
+
+    <script>
+        // Funkce pro získání parametru z URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Získání odpovědi uživatele a zobrazení na stránce
+        const userResponse = getQueryParam("response");
+        if (userResponse) {
+            document.getElementById("userResponse").innerText = "User wrote: " + decodeURIComponent(userResponse);
+        } else {
+            document.getElementById("userResponse").innerText = "No response received.";
+        }
+    </script>
 </body>
 </html>
