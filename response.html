@@ -32,9 +32,12 @@
     </style>
 </head>
 <body>
-
-<script>
-        const text = "OKAY, WRITE A MESSAGE TO JOSIII";
+    <h1 id="text"></h1>
+    <input type="text" id="response" placeholder="Write your answer here...">
+    <button onclick="submitResponse()">Submit</button>
+    
+    <script>
+        const text = "HELLO, HOW ARE YOU?";
         let index = 0;
         function showText() {
             if (index < text.length) {
@@ -43,12 +46,6 @@
                 index++;
                 setTimeout(showText, 150);
             }
-        }
-        
-        function submitResponse() {
-            let response = document.getElementById("response").value;
-            localStorage.setItem("userResponse", response);
-            window.location.href = "response.html";
         }
         
         window.onload = showText;
