@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-    <p><strong>JOSEF DOESN'T SEE RESPONSE, PLEASE SEND HIM MESSAGE</strong></p>
+    <p><strong>Díky za zprávu, chápu, že se máš</strong></p>
 
     <p id="userResponse" style="font-size: 30px; margin-top: 20px;"></p>
     <script>
@@ -29,7 +29,7 @@
         // Získání odpovědi uživatele a zobrazení na stránce
         const userResponse = getQueryParam("response");
         if (userResponse) {
-            document.getElementById("userResponse").innerText = "User wrote: " + decodeURIComponent(userResponse);
+            document.getElementById("userResponse").innerText = "" + decodeURIComponent(userResponse);
         } else {
             document.getElementById("userResponse").innerText = "No response received.";
         }
