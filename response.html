@@ -16,23 +16,28 @@
     </style>
 </head>
 <body>
-    <p><strong>OKAY, SEND ME A MESSAGE, OK?</strong></p>
+   
 
-    <p id="userResponse" style="font-size: 30px; margin-top: 20px;"></p>
-    <script>
-        // Funkce pro získání parametru z URL
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
+<script>
+        const text = "HELLO, HOW ARE YOU?";
+        let index = 0;
+        function showText() {
+            if (index < text.length) {
+                document.getElementById("text").innerHTML += text[index];
+                document.getElementById("text").style.opacity = 1;
+                index++;
+                setTimeout(showText, 150);
+            }
         }
-
-        // Získání odpovědi uživatele a zobrazení na stránce
-        const userResponse = getQueryParam("response");
-        if (userResponse) {
-            document.getElementById("userResponse").innerText = "" + decodeURIComponent(userResponse);
-        } else {
-            document.getElementById("userResponse").innerText = "No response received.";
+        
+        function submitResponse() {
+            let response = document.getElementById("response").value;
+            localStorage.setItem("userResponse", response);
+            window.location.href = "response.html";
         }
+        
+        window.onload = showText;
     </script>
+   
 </body>
 </html>
