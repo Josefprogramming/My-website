@@ -48,11 +48,21 @@
             }
         }
         
-        function submitResponse() {
-            let response = document.getElementById("response").value;
-            localStorage.setItem("userResponse", response);
-            window.location.href = "response.html";
-        }
+      function submitResponse() {
+    let response = document.getElementById("response").value.trim().toLowerCase();
+
+    localStorage.setItem("userResponse", response);
+
+    if (response === "yes") {
+        window.location.href = "response.html";
+    } 
+    else if (response === "no") {
+        window.location.href = "response2.html";
+    } 
+    else {
+        alert("Please type Yes or No.");
+    }
+}
         
         window.onload = showText;
     </script>
