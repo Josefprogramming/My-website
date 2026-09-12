@@ -36,8 +36,8 @@
 
 button {
     margin-top: 25px;
-    width: 50px;
-    height: 300px;
+    width: 70px;
+    height: 30px;
     font-size: 10px;
     font-weight: bold;
     border: none;
@@ -48,7 +48,7 @@ button {
 </head>
 <body>
     <h1 id="text"></h1>
-    <input type="text" id="response" placeholder="Yes or No?">
+    <input type="text" id="response" placeholder="Write Yes or No...">
     <button onclick="submitResponse()">Send</button>
     
     <script>
@@ -59,7 +59,7 @@ button {
                 document.getElementById("text").innerHTML += text[index];
                 document.getElementById("text").style.opacity = 1;
                 index++;
-                setTimeout(showText, 50);
+                setTimeout(showText, 100);
             }
         }
         
